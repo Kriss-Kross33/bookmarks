@@ -1,17 +1,27 @@
 {% load thumbnail %}
 
 {% for image in images %}
-    <div class="image">
-        <a href="{{ image.get_absolute_url }}">
-            {% thumbnail image.image 300x300 crop="smart" as im %}
-            <a href="{{ image.get_absolute_url }}">
-                <img src="{{ im.url }}"/>
-            </a>
-        </a>
-    <div class="info">
-        <a href="{{ imge.get_absolute_url }}" class="title">
-            {{ image.title }}
-        </a>
-    </div>
-    </div>
+
+            <div class="card card-pin">
+                <a href="{{ image.get_absolute_url }}">
+                    {#% thumbnail image.image 600x500 crop="smart" as im %#}
+                    <a href="{{ image.get_absolute_url }}">
+                        <img src="{{ image.url }}"/>
+                    </a>
+                </a>
+                <div class="overlay">
+
+                    <h2 class="card-title title">
+                        <a href="{{ image.get_absolute_url }}" class="title">
+                            {{ image.title|slice:"30" }}
+                        </a>
+                    </h2>
+                    <div class="more">
+                        <a href="post.html">
+                        <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> More </a>
+                    </div>
+                </div>
+            </div>
+
+
 {% endfor %}

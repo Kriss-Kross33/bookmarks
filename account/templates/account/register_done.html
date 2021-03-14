@@ -2,8 +2,10 @@
 
 {% block title %}Welcome{% endblock title %}
 
+{% block h1 %}<h1 class="font-weight-bold title">Welcome {{new_user.first_name}}!</h1>{% endblock %}
+
+
 {% block content %}
-    <h1>Welcome {{new_user.first_name}}!</h1>
     <p>Your account was successfully created. Now you can
     <a href="{% url 'login' %}">Login</a>.</p>
 {% endblock content %}

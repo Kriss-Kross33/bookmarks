@@ -2,11 +2,20 @@
 
 {% block title %}Images bookmarked{% endblock %}
 
+{% block h1 %}<h1 class="font-weight-bold title">Bookmark an image</h1>{% endblock %}
+
 {% block content %}
-    <h1>Images bookmarked</h1>
-    <div id="image-list">
+
+    <div class="container-fluid">
+    <div class="row">
+        <div class="card-columns">
         {% include "images/image/list_ajax.html" %}
+        </div>
     </div>
+    </div>
+
+
+
 {% endblock %}
 
 {% block domready %}
@@ -24,7 +33,7 @@
                     empty_page = true;
                 }else{
                     block_request = false;
-                    $('#image-list').append(data);
+                    $('.card-columns').append(data);
                 }
             });
         }

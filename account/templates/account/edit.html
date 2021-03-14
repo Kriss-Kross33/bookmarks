@@ -2,13 +2,17 @@
 
 {% block title %}Edit your account{% endblock title %}
 
+{% block h1 %}<h1 class="font-weight-bold title">Edit your account</h1>{% endblock %}
+
+
 {% block content %}
-    <h1>Edit your account</h1>
-    <p>You can edit your account using the following form:</p>
-    <form method="post" enctype="multipart/form-data">
-        {{ user_form.as_p }}
-        {{ profile_form.as_p }}
-        {% csrf_token %}
-        <p><input type="submit" value="Save changes"/></p>
-    </form>
+    <div id="content">
+        <p>You can edit your account using the following form:</p>
+        <form method="post" enctype="multipart/form-data">
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" value="Save changes"/></p>
+        </form>
+    </div>
 {% endblock content %}

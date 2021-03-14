@@ -4,21 +4,23 @@
   Dashboard
 {% endblock title %}
 
+{% block h1 %}<h1 class="font-weight-bold title">Dashboard</h1>{% endblock %}
 
 {% block content %}
-    <h1>Dashboard</h1>
 
-    {% with total_images_created=request.user.images_created.count  %}
-      <p>Welcome to your dashboard. You have bookmarked {{ total_images_created }}
-          image{{ total_images_created|pluralize }}.
-      </p>
-    {% endwith %}
+    <div id="content">
+        {% with total_images_created=request.user.images_created.count  %}
+          <p>Welcome to your dashboard. You have bookmarked {{ total_images_created }}
+              image{{ total_images_created|pluralize }}.
+          </p>
+        {% endwith %}
 
-    <p>Drag the following button to your bookmarks toolbar to bookmark images
-        from other websites → <a href="javascript:{% include "bookmarklet_launcher.js" %}"
-    class="button">Bookmark it</a>
-    </p>
-    <p>You can also <a href="{% url "edit" %}">edit your profile</a> or 
-    <a href="{% url "password_change" %}">change your password</a></p>
+        <p>Drag the following button to your bookmarks toolbar to bookmark images
+            from other websites → <a href="javascript:{% include "bookmarklet_launcher.js" %}"
+        class="button">Bookmark it</a>
+        </p>
+        <p>You can also <a href="{% url "edit" %}">edit your profile</a> or
+        <a href="{% url "password_change" %}">change your password</a></p>
+    </div>
 {% endblock content %}
 
